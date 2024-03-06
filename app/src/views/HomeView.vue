@@ -1,15 +1,24 @@
 <template>
-  <div>
-    <DestCard
-      v-for="destination in destinations"
-      :key="destination.name"
-      :Destination="destination"
-    />
+  <div class="parent">
+    <div class="container">
+      <DestCard
+        v-for="destination in destinations"
+        :key="destination.name"
+        :Destination="destination"
+        @click="addToCart(destination)"
+      />
+    </div>
+    <CoolCart v-if="length === 1" />
   </div>
 </template>
 
 <script setup>
 import DestCard from "@/components/DestCard.vue";
+import CoolCart from "@/components/CoolCart.vue";
+const addToCart = function (x) {
+  console.log(x);
+};
+let length = 1;
 const destinations = [
   {
     name: "Venetian Renaissance",
@@ -50,4 +59,13 @@ const destinations = [
 ];
 </script>
 
-<style scoped></style>
+<style scoped>
+.container {
+  display: flex;
+  width: 70vw;
+  flex-wrap: wrap;
+}
+.parent {
+  display: flex;
+}
+</style>

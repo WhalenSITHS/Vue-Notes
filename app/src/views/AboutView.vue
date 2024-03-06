@@ -1,15 +1,13 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <CakeCard />
+  <ComponentA />
+  <ComponentB />
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<script setup>
+import CakeCard from "../components/CakeCard.vue";
+import ComponentA from "../components/ComponentA.vue";
+import ComponentB from "../components/ComponentB.vue";
+</script>
+
+<style scoped></style>
